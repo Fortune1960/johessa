@@ -48,3 +48,11 @@ document.addEventListener("click", (e) => {
         });
     }
 });
+document.querySelectorAll(".contact-item > a").forEach(item => {
+    item.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            item.parentElement.classList.toggle("active");
+        }
+    });
+});

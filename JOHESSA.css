@@ -129,31 +129,25 @@ ul li a{
 .course-item{
     position: relative;
 }
-
 .level-menu{
     position: absolute;
-    left: 240px;
+    left: 100%;
     top: 0;
 
-    width: 200px;
-    background: white;
+    min-width: 200px;
+
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
 
-    list-style: none;
-    padding: 10px 0;
-
-    display: flex;
+    display: none;
     flex-direction: column;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(10px);
-
-    transition: all 0.3s ease;
     z-index: 1001;
 }
 
+.course-item:hover > .level-menu{
+    display: flex;
+}
 .course-item:hover .level-menu{
     opacity: 1;
     visibility: visible;
@@ -223,6 +217,37 @@ ul li a{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}.contact-item{
+    position: relative;
+}
+
+.contact-submenu{
+    position: absolute;
+    left: 100%;
+    top: 0;
+
+    min-width: 250px;
+
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    display: none;
+    flex-direction: column;
+    z-index: 1002;
+}
+
+.contact-item:hover .contact-submenu{
+    display: flex;
+}
+
+.contact-submenu li{
+    width: 100%;
+}
+
+.contact-submenu li a{
+    display: block;
+    padding: 12px 20px;
 }
 /* content */
 .content{
@@ -502,7 +527,7 @@ ul li a{
     }
 
     .logo img{
-        width: 130px;
+        width: 100px;
     }
 
      .menu-toggle{
@@ -575,9 +600,24 @@ ul li a{
     .contact-menu li a{
         font-size: 16px !important;
         font-weight: 600;
-        padding: 18px 20px;
+        padding: 18px 18px;
         line-height: 1.5;
     }
+    .contact-submenu{
+    position: relative;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    background: #eaf2ff;
+    box-shadow: none;
+
+    display: none;
+}
+
+.contact-item.active .contact-submenu{
+    display: flex;
+}
 
     .left,
     .right{
