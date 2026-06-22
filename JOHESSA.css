@@ -527,7 +527,7 @@ ul li a{
     }
 
     .logo img{
-        width: 100px;
+        width: 80px;
     }
 
      .menu-toggle{
@@ -541,9 +541,9 @@ ul li a{
 
      .nav-links{
     position: absolute;
-    top: 100px;   
-    right: 20px;
-    width: 230px;
+    top: 110px;   
+    right: 5px;
+    width: 380px;
 
     background: white;
     border-radius: 15px;
@@ -554,7 +554,7 @@ ul li a{
     z-index: 999;
 }
 .nav-links .dropdown-menu{
-    position: relative;   /* override absolute for mobile */
+    position: relative;  
     top: 0;
     left: 0;
     right: auto;
@@ -593,9 +593,9 @@ ul li a{
         padding: 20px;
     }
     .contact-menu{
-        width: 320px;
-        top: 50px; 
-    }
+    width: 250px;
+    left: 50px;
+}
 
     .contact-menu li a{
         font-size: 16px !important;
@@ -619,22 +619,30 @@ ul li a{
     display: flex;
 }
 
-    .left,
+    .left
     .right{
         width: 100%;
         text-align: center;
     }
 
     .tagline{
-        font-size: 15px;
-        letter-spacing: 2px;
-    }
+    display: inline-block;
+    background: linear-gradient(135deg, #1847ff, #4da3ff);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-right: auto;
+}
+
 
     .left h1{
-        font-size: 32px;
+        font-size: 44px !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
     }
-    .left{
-    margin-bottom: 10px;
+
+      .left{
+    text-align: left !important;
 }
 
      .description{
