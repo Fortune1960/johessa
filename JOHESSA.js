@@ -26,7 +26,18 @@ document.querySelectorAll(".dropdown > a").forEach(drop => {
 document.querySelectorAll(".course-item > a").forEach(course => {
     course.addEventListener("click", (e) => {
         e.preventDefault();
-        course.parentElement.classList.toggle("active");
+
+        const currentItem = course.parentElement;
+
+        // Close all other level menus
+        document.querySelectorAll(".course-item").forEach(item => {
+            if (item !== currentItem) {
+                item.classList.remove("active");
+            }
+        });
+
+        // Toggle the clicked one
+        currentItem.classList.toggle("active");
     });
 });
 document.addEventListener("click", (e) => {
@@ -50,9 +61,16 @@ document.addEventListener("click", (e) => {
 });
 document.querySelectorAll(".contact-item > a").forEach(item => {
     item.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            item.parentElement.classList.toggle("active");
-        }
+        e.preventDefault();
+
+        const currentItem = item.parentElement;
+
+        document.querySelectorAll(".contact-item").forEach(contact => {
+            if (contact !== currentItem) {
+                contact.classList.remove("active");
+            }
+        });
+
+        currentItem.classList.toggle("active");
     });
 });
