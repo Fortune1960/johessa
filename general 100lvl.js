@@ -40,3 +40,15 @@ menu.classList.toggle("show");
 
 });
 
+const mobileMenuBtn =
+document.querySelector(".mobile-menu-btn");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+mobileMenuBtn.addEventListener("click", () => {
+
+sidebar.classList.toggle("show-sidebar");
+
+});
+
