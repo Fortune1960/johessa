@@ -29,18 +29,78 @@ nav{
     padding: 35px 70px;
    
 }
+/* ===== DESKTOP NAV LAYOUT ===== */
+
+    nav.navbar{
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        padding: 35px 70px;
+    }
+
+    /* CENTER MENU */
+    .nav-center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links{
+    display: flex;
+    list-style: none;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+    /* RIGHT CONTACT BOX */
+    .nav-right{
+        display: flex;
+        justify-content: flex-end;
+    }
+.contact-box{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    background: #1847ff;
+    color: white;
+
+    font-weight: 600;
+    font-size: 16px;
+
+    text-decoration: none;
+
+    border: 2px solid #1847ff;
+
+    transition: 0.3s ease;
+}
+
+.contact-box:hover{
+    background: transparent;
+    color: #1847ff;
+}
+.contact,
+.contact li,
+.contact ul{
+    list-style: none !important;
+}
+
+.contact{
+    list-style-type: none;
+}
+    /* keep dropdown working */
+    .contact-menu{
+        right: 0;
+    }
 
 .logo img{
    width: 150px;
 }
 .menu-toggle{
     display: none;
-}
-
-.nav-links{
-    display: flex;
-    list-style: none;
-    gap: 55px;
 }
 
 ul {
@@ -169,9 +229,6 @@ ul li a{
     background: #1847ff;
     color: white;
 }
-.contact{
-    position: relative;
-}
 .contact a{
     text-decoration: none;
     color: #09153e;
@@ -180,34 +237,42 @@ ul li a{
 .contact-menu.show{
     display: flex;
 }
+.contact{
+    position: relative;
+    display: inline-block;
+}
+
 .contact-menu{
     position: absolute;
-    top: 45px;
-    right: 8px;
-    width: 300px;
+    top: calc(100% + 10px); /* 👈 forces it BELOW the button */
+    right: 0;               /* align with Contact button */
+    left: auto;
+
+    width: 280px;
+
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    list-style: none;
-    padding: 10px 0;
+
+    display: flex;
     flex-direction: column;
 
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
 
-    transition: 0.3;
-    z-index: 1000;
+    transition: 0.3s ease;
+
+    z-index: 3000;
 }
-.contact li{
+.contact-menu li{
     width: 100%;
 }
+
 .contact-menu li a{
     display: block;
-    padding: 12px 50px;
-    color: #09153e;
-    text-decoration: none;
-    transition: 0.3s;
+    padding: 12px 18px;
+    font-size: 14px;
 }
 .contact-menu li a:hover{
     background: #1847ff;
@@ -222,19 +287,19 @@ ul li a{
 }
 
 .contact-submenu{
-    position: absolute;
-    left: 100%;
+    position: relative;   /* 👈 stops overflow issues */
+    left: 0;
     top: 0;
 
-    min-width: 250px;
+    width: 100%;
 
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    background: #eaf2ff;
+    border-radius: 8px;
 
     display: none;
     flex-direction: column;
-    z-index: 1002;
+
+    margin-top: 5px;
 }
 
 .contact-item:hover .contact-submenu{
@@ -248,6 +313,14 @@ ul li a{
 .contact-submenu li a{
     display: block;
     padding: 12px 20px;
+    color: #09153e;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.contact-submenu li a:hover{
+    background: none;
+    color: #09153e;
+    cursor: default;
 }
 /* content */
 .content{
@@ -519,24 +592,117 @@ ul li a{
 /* ==========================
    PHONES
 ========================== */
-@media screen and (max-width: 768px){
+    @media screen and (max-width: 768px){
+    /* NAVBAR LAYOUT */
+nav.navbar{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+     position: relative !important;
+}
+
+.logo{
+    margin-left: 10px;
+}
+
+.logo img{
+    width: 95px;
+}
+
+/* CONTACT BUTTON */
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 55%;
+    top: 45px;
+
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.contact-box{
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+    display: block;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+    z-index: 1001;
+}
+    /* BRING BACK HERO TEXT */
+    .content{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .left{
+        width: 100%;
+        display: block !important;
+        text-align: left !important;
+    }
+
+    .tagline{
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        background: linear-gradient(135deg,#1847ff,#4da3ff);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 25px;
+
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        width: fit-content;
+    }
+
+    .left h1{
+        display: block !important;
+        font-size: 34px !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .description{
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        font-size: 15px !important;
+        line-height: 1.7;
+        margin-top: 15px;
+    }
+
+    
+    .contact{
+        width: auto;         
+    }
+
+    .contact-menu{
+        position: relative;   
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background: #f9f9f9;
+    }
+
 
    nav{
         padding: 15px 20px;
         position: relative;
-    }
-
-    .logo img{
-        width: 80px;
-    }
-
-     .menu-toggle{
-        display: block;
-        font-size: 30px;
-        cursor: pointer;
-        color: #09153e;
-        margin-left: auto;
-        margin-right: 20px;
     }
 
      .nav-links{
@@ -553,6 +719,7 @@ ul li a{
     flex-direction: column;
     z-index: 999;
 }
+
 .nav-links .dropdown-menu{
     position: relative;  
     top: 0;
@@ -587,14 +754,16 @@ ul li a{
     .nav-links li:last-child{
         border-bottom: none;
     }
-
-    .content{
-        flex-direction: column;
-        padding: 20px;
-    }
-    .contact-menu{
-    width: 250px;
-    left: 50px;
+    .contact:hover .contact-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+.contact.active .contact-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    display: flex;
 }
 
     .contact-menu li a{
@@ -619,36 +788,9 @@ ul li a{
     display: flex;
 }
 
-    .left
-    .right{
-        width: 100%;
-        text-align: center;
-    }
-
-    .tagline{
-    display: inline-block;
-    background: linear-gradient(135deg, #1847ff, #4da3ff);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
-    margin-right: auto;
-}
-
-
-    .left h1{
-        font-size: 44px !important;
-        line-height: 1.2 !important;
-        font-weight: 800 !important;
-    }
-
-      .left{
-    text-align: left !important;
-}
-
-     .description{
-         margin-top: 20px;
-    font-size: 15px !important;
-    line-height: 1.6;
+   .left,
+.right{
+    width: 100%;
 }
     .line{
     display: none !important;
@@ -747,15 +889,6 @@ ul li a{
     padding: 12px 15px;
     font-size: 14px;
 }
-    .contact-menu{
-        width: 250px;
-        right: 0;
-    }
-
-    .contact-menu li a{
-        padding: 12px 15px;
-        font-size: 14px;
-    }
 }
 
 
