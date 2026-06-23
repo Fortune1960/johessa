@@ -439,7 +439,7 @@ ul li a{
     font-size: 40px;
     color: #09153e;
     margin-bottom: 50px;
-    padding-top: 150px;
+    padding-top: 5px;
 }
 .lecturer-card{
    width: 300px;
@@ -478,7 +478,7 @@ ul li a{
 .powered-section{
     display: flex;
     justify-content: center;
-    margin: 70px 0;
+    margin: 20px 0;
 }
 .powered-box{
     padding: 15px 40px;
