@@ -609,8 +609,13 @@ nav.navbar{
 .logo img{
     width: 95px;
 }
+.nav-right{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
-/* CONTACT BUTTON */
+/* CONTACT BUTTON 
 .nav-right{
     display: flex;
     align-items: center;
@@ -622,7 +627,7 @@ nav.navbar{
 
     transform: translateX(-50%);
     z-index: 1000;
-}
+}*/
 
 .contact-box{
     display: inline-block;
@@ -645,6 +650,8 @@ nav.navbar{
         flex-direction: column;
         padding: 20px;
         margin-top: 20px;
+         position: relative;
+    z-index: 1;
     }
 
     .left{
@@ -691,14 +698,6 @@ nav.navbar{
         width: auto;         
     }
 
-    .contact-menu{
-        position: relative;   
-        width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-        background: #f9f9f9;
-    }
-
 
    nav{
         padding: 15px 20px;
@@ -706,6 +705,7 @@ nav.navbar{
     }
 
      .nav-links{
+        pointer-events: none;
     position: absolute;
     top: 110px;   
     right: 5px;
@@ -741,6 +741,7 @@ nav.navbar{
 }
     .nav-links.active{
          display: flex !important;
+          pointer-events: auto;
     }
     .nav-links .active::after{
     display: none;
@@ -754,15 +755,34 @@ nav.navbar{
     .nav-links li:last-child{
         border-bottom: none;
     }
-    .contact:hover .contact-menu{
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+.contact-menu{
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    transform: translateX(-50%);
+
+    width: 320px;
+    max-width: 90vw;
+
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    flex-direction: column;
+    z-index: 2000;
 }
-.contact.active .contact-menu{
+.contact:hover .contact-menu{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+.contact-item{
+    position: relative;
+}
+
+.contact.active .contact-menu{
     display: flex;
 }
 
@@ -772,20 +792,15 @@ nav.navbar{
         padding: 18px 18px;
         line-height: 1.5;
     }
-    .contact-submenu{
-    position: relative;
-    left: 0;
-    top: 0;
-
+   .contact-submenu{
+    display: none;
     width: 100%;
     background: #eaf2ff;
-    box-shadow: none;
-
-    display: none;
 }
 
 .contact-item.active .contact-submenu{
     display: flex;
+    flex-direction: column;
 }
 
    .left,
