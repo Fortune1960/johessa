@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const contact = document.querySelector(".contact");
     const contactBtn = document.querySelector(".contact-box");
 
+    // Mobile Contact dropdown
+document.querySelectorAll(".mobile-contact > a").forEach(contact => {
+    contact.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        contact.parentElement.classList.toggle("active");
+    });
+});
+
     // Hamburger menu
     menuToggle.addEventListener("click", (e) => {
         e.stopPropagation();

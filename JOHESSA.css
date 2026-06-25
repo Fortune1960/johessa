@@ -520,6 +520,9 @@ ul li a{
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+.mobile-contact{
+    display: none;
+}
 
 /* ==========================
    TABLETS (iPad)
@@ -614,26 +617,8 @@ nav.navbar{
     display: flex;
     align-items: center;
 }
-
-/* CONTACT BUTTON 
-.nav-right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    left: 55%;
-    top: 45px;
-
-    transform: translateX(-50%);
-    z-index: 1000;
-}*/
-
 .contact-box{
-    display: inline-block;
-    padding: 8px 15px;
-    font-size: 15px;
-    white-space: nowrap;
+    display: none;
 }
 
 /* HAMBURGER */
@@ -649,7 +634,7 @@ nav.navbar{
         display: flex;
         flex-direction: column;
         padding: 20px;
-        margin-top: 20px;
+        margin-top: 1px;
          position: relative;
     z-index: 1;
     }
@@ -692,13 +677,6 @@ nav.navbar{
         line-height: 1.7;
         margin-top: 15px;
     }
-
-    
-    .contact{
-        width: auto;         
-    }
-
-
    nav{
         padding: 15px 20px;
         position: relative;
@@ -755,53 +733,6 @@ nav.navbar{
     .nav-links li:last-child{
         border-bottom: none;
     }
-.contact-menu{
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 5%;
-    transform: translateX(-50%);
-
-    width: 320px;
-    max-width: 90vw;
-
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-    flex-direction: column;
-    z-index: 2000;
-}
-.contact:hover .contact-menu{
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.contact-item{
-    position: relative;
-}
-
-.contact.active .contact-menu{
-    display: flex;
-}
-
-    .contact-menu li a{
-        font-size: 16px !important;
-        font-weight: 600;
-        padding: 18px 18px;
-        line-height: 1.5;
-    }
-   .contact-submenu{
-    display: none;
-    width: 100%;
-    background: #eaf2ff;
-}
-
-.contact-item.active .contact-submenu{
-    display: flex;
-    flex-direction: column;
-}
 
    .left,
 .right{
@@ -903,6 +834,91 @@ nav.navbar{
     display: block;
     padding: 12px 15px;
     font-size: 14px;
+}
+
+.mobile-contact{
+    display:block !important;
+    width:100%;
+    margin-top:0 !important;
+    padding-top:0 !important;
+}
+
+.mobile-contact > a{
+    display:block;
+    width:90%;
+
+   margin:2px auto 8px auto;
+
+    padding:12px 20px;
+
+    background:#1847ff;
+    color:white !important;
+
+    text-align:center;
+    font-size:17px;
+    font-weight:600;
+
+    border-radius:10px;
+    text-decoration:none;
+
+    transition:0.3s ease;
+}
+
+.mobile-contact > a:hover{
+    background:#0f35d6;
+}
+
+.mobile-contact-menu{
+    display:none;
+    width:100%;
+    margin:0;
+    padding:0;
+    background:#f9f9f9;
+}
+
+.mobile-contact.active .mobile-contact-menu{
+    display:block;
+}
+
+.mobile-contact-menu .contact-item{
+    padding:0;
+    border-bottom:none;
+}
+
+.mobile-contact-menu .contact-item > a{
+    display:block;
+    padding:12px 15px;
+    display:block;
+    padding:12px 15px;
+    transition:0.3s ease;
+}
+.mobile-contact-menu .contact-item > a:hover{
+    background:#1847ff;
+    color:white !important;
+    border-radius:8px;
+}
+.mobile-contact-menu .contact-submenu li a{
+    display:block;
+    padding:12px 15px;
+    transition:0.3s ease;
+}
+
+.mobile-contact-menu .contact-submenu li a:hover{
+    background:#dbe8ff;
+    color:#1847ff;
+    border-radius:8px;
+}
+
+.mobile-contact-menu .contact-submenu{
+    display:none;
+    width:100%;
+    margin:0;
+    padding:0;
+    background:#eaf2ff;
+}
+
+.mobile-contact-menu .contact-item.active .contact-submenu{
+    display:block;
 }
 }
 
